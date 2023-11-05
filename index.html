@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/home-style.css">
+    <title>Home</title>
+</head>
+<body>
+    <a href = "#main">Skip to Main</a>
+    
+    <header><h1>Welcome</h1></header>
+</head>
+<body>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Slideshow</title>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="images/banana_split.jpg" alt="Banana Split">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="images/date_wood.jpg" alt="Date Wood">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="images/red_kyoto.jpg" alt="Red Kyoto">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000);
+        }
+    </script>
+
+    <header><h2>Lifestyle Hub</h2></header>
+    <nav>
+        <a href ="index.html">Home</a>
+        <a href ="pets.html">Pets</a>
+        <a href="recipes.html">Food</a>
+        <a href="travel.html">Travel</a>
+    </nav>
+
+    <main id = "main">
+        <div class="pets" id="pets">
+            <h2><a href="index.html"></a>Pets</h2>
+            <p>Explore content about our furry friends and how to care for them.</p>
+            <div>
+                <img src="images/dog-and-cat.jpg" width = "800" alt="Cute dog with cat">
+            </div>
+        </div>
+
+        <div class="travel" id="travel">
+            <h2>Travel</h2>
+            <p>Explore amazing destinations and travel hacks for your next adventure.</p>
+            <div>
+                <img src="images/vacation.jpg" width = "800" alt="A Beautiful View, where land and the sea meets">
+            </div>
+        </div>
+
+        <div class="food" id="food">
+            <h2>Food</h2>
+            <p>Indulge in culinary delights and recipes from around the world.</p>
+            <div>
+                <img src="images/cheese.jpg" width = "800" alt="Beautiful gourmet cheese">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
